@@ -1,0 +1,124 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% block title %}Create an account{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <h1>Create an account</h1>#}
+{#    <p>Please, sign up using the following form:</p>#}
+{#    <form action="." method="post">#}
+{#        {{ user_form.as_p }}#}
+{#        {% csrf_token %}#}
+{#        <p><input type="submit" value="Create my account"></p>#}
+{#    </form>#}
+{#{% endblock %}#}
+
+
+{% load static %}
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>register</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+         <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+		<link rel="stylesheet" href="css/style.css" />
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+
+		<!-- Отображаемое тело страницы -->
+	<body>			<!-- блок -->
+		<div class="wrapper">
+				<main class="page">
+					<div class="main-screen">
+				<!-- флекс контейнер блока -->
+					<div class="flex_container_choose_user">
+						<!-- 1 элемент -->
+							<div class="train">
+								<div class="choose_user_text_flex_container">
+									<div class="choose_user_text_flex_container_head">
+											<div class="choose_user_text_flex_container_head_img">
+												<img src="{% static 'main/img/logo.png' %}" alt="">
+											</div>
+											<h1> Врач </h1>
+											<p class="title">Регистрация </p>
+									</div>
+
+										<div class="social-buttons">
+										        <button class="social-button facebook">
+
+								                    <span class="google">Sign in with Google</span>
+
+										        </button>
+										    </div>
+										<div class="social-message">
+											<div class="line"></div>
+											<p class="message">Или</p>
+											<div class="line"></div>
+										</div>
+
+
+										<div class="choose_user_text_flex_container_choose doctor_register">
+											<form class="form" action="." method="post">
+
+											    <p class="message">Signup now and get full access to our app. </p>
+											        <div class="flex">
+											        <label>
+											            <input required="" placeholder="Имя" type="text" class="input" name="first_name">
+											            <span>Firstname </span>
+											        </label>
+
+											        <label>
+											            <input required="" placeholder="Фамилия" type="text" class="input" name="username">
+											            <span>Lastname </span>
+											        </label>
+											    </div>
+
+											    <label>
+											        <input required="" placeholder="Почта" type="email" class="input" name="email">
+											        <span>Email </span>
+											    </label>
+
+											    <label>
+											        <input required="" placeholder="Пароль" type="password" class="input" name="password1">
+											        <span>Password {{ form.password1 }}</span>
+											    </label>
+											    <label>
+											        <input required="" placeholder="Повторите пароль" type="password" class="input" name="password2">
+											        <span>Confirm password </span>
+											    </label>
+                                                 {% csrf_token %}
+											    <button class="submit" type="submit" value="Log-in">Submit</button>
+											    <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+											</form>
+										</div>
+									</div>
+								</div>
+
+							<!-- флекс контейнер блока текста -->
+							</div>
+
+
+						<!-- 2 элемент -->
+						<div class="choose_user_img ibg">
+							<img src="{% static 'main/img/doctor_in_maska.png' %}" alt="">
+						</div>
+					</div>
+
+				</main>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'main/js/vendors.js'%}"></script>
+    <script src="{% static 'main/js/main.js'%}"></script>
+	<script src="js/vendors.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+	</html>

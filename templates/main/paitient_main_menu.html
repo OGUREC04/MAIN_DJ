@@ -1,0 +1,185 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+{% load static %}
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>FLEXBOX</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+          <link rel="stylesheet" href="{% static 'main/fonts/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+          <link rel="stylesheet" href="{% static 'main/css/style_main_menu.css'%}">
+          <link rel="stylesheet"  type="text/css" href="{% static 'main/dist/semantic.min.css'%}">
+{#		<link rel="stylesheet" href="css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">#}
+{#		<link rel="stylesheet" href="css/style_main_menu.css" />#}
+{#		<link rel="stylesheet" type="text/css" href="dist/semantic.min.css">#}
+
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<!-- Отображаемое тело страницы -->	
+	<body>	
+		<div class="wrapper">
+			<main class="page">
+				<div class="main_screen">
+					<div class="flex_container">
+						<div class="left_menu">
+							<div class="left_menu_row">
+								<div class="left_menu_column">
+								<div class="user">
+									<div class="avatar-upload">
+								        <div class="avatar-edit">
+								            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+								            <label for="imageUpload"></label>
+								        </div>
+								        <div class="avatar-preview">
+								            <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+								            </div>
+								        </div>
+								    </div>
+								    <div class="text_name">
+									<p class="user_user">пользователь</p>
+									<p class="name">Борис Александров</p>
+									</div>
+
+								</div>
+
+								<div class="line">
+									
+								</div>
+
+								<div class="menu">
+									<div class="title">Меню</div>
+									<div class="menu_list">
+										<ul>
+											<li>Главная</li>
+											<li>Диалоги</li>
+											<li>История вызовов</li>
+											<li>Профиль</li>
+										</ul>
+									</div>
+
+								</div>
+
+								<div class="line">
+								</div>
+
+								<div class="settings">
+									<div class="title">	
+										Настройки
+									</div>
+
+									<a  href="#" class="set">Настройки</a>
+								</div>
+
+
+								<div class="footer_menu">
+									<a  href="#" class="help">Помощь</a>
+
+									<a  href="#" class="exit">Выйти из аккаунта</a>
+
+								</div>
+
+							</div>
+							</div>
+						</div>
+						<div class="right_screen">
+							<div class="right_screen_column">
+								<div class="preview">
+									<div class="preview_flex_container">
+										<div class="preview_title_block">
+											<div class="logo">
+												<img src="img/logo.png" alt="">
+												
+											</div>
+											<h1>LIFE LINE </h1>
+											<h2> Ваше здоровье - наш приоритет </h2>
+											<p>Мобильное приложение с возможностью вызова квалифицированного медицинского персонала по конкретному адресу, с целью оказания медицинской помощи</p>
+											<a class="set_2" href="#"> Контакты </a>
+										</div>
+										<div class="preview_img_block ibg">
+											<img src="img/istockphoto-1189304032-612x612-removebg-preview 3 (1).png">
+										</div>
+										<div class="preview_img_block_second ibg ">
+											<img src="img/male-doctor-portrait-isolated-white-background-56744085-removebg-preview 3.png">
+										</div>
+									</div>
+									
+								</div>
+
+								<div class="interface">
+									<div class="patient_form">
+										<div class="interface_container">
+											<form class="patient_form_form">
+
+												<div class="interface_problem_area">
+													<label for="textarea">Опишите свое состояние</label>
+													<textarea placeholder="256 символов" rows="20" name="comment[text]"  maxlength="256" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+												</div>
+
+												<div class="interface_problem_area_choose">
+													<label for="states">Выбирете несколько</label>
+													<select name="states" class="ui selection dropdown" multiple="" id="multi-select">
+													  <option value=""> Проблемы </option>
+													  <option value="AL">Alabama</option>
+													  <option value="AK">Alaska</option>
+													  <option value="AZ">Arizona</option>
+													  <option value="AR">Arkansas</option>
+													  <option value="CA">California</option>
+													  <option value="OH">Ohio</option>
+													  <option value="OK">Oklahoma</option>
+													  <option value="OR">Oregon</option>
+													  <option value="PA">Pennsylvania</option>
+													  <option value="RI">Rhode Island</option>
+													  <option value="SC">South Carolina</option>
+													  <option value="SD">South Dakota</option>
+													  <option value="TN">Tennessee</option>
+													  <option value="TX">Texas</option>
+													  <option value="UT">Utah</option>
+													  <option value="VT">Vermont</option>
+													  <option value="VA">Virginia</option>
+													  <option value="WA">Washington</option>
+													  <option value="WV">West Virginia</option>
+													  <option value="WI">Wisconsin</option>
+													  <option value="WY">Wyoming</option>
+														</select>	
+												</div>
+
+
+												<button class="form-submit-btn" type="submit">Submit</button>
+											</form>										
+										</div>
+									</div>
+
+										
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="{% static 'main/js/avatar.js'%}"></script>
+        <script src="{% static 'main/js/vendors.js'%}"></script>
+        <script src="{% static 'main/js/main.js'%}"></script>
+
+{#        #}
+{#	<script src="js/avatar.js" type="text/javascript"></script>#}
+{#	<script src="js/vendors.js"></script>#}
+{#	<script src="js/main.js"></script>#}
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+          <script src="{% static 'main/dist/semantic.min.js'%}"></script>
+          <script src="{% static 'main/js/sema.js'%}"></script>
+{#	<script src="dist/semantic.min.js"></script>#}
+{#	<script src="js/sema.js"></script>#}
+	</body>
+	</html>

@@ -1,0 +1,326 @@
+{% load static %}
+
+{#TODO: порешать какого хуя точки не плавно появляются  #}
+{#TODO: как при смещение шапки плавно перемещать текст #}
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{% block title %} my site{% endblock %}</title>
+{#    <link rel="stylesheet" href="{%static 'css/nicepage.css'  %}" media="screen">#}
+{#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">#}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Pangolin&family=Playfair+Display+SC&family=Work+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+
+{#    <script class="u-script" type="text/javascript" src="{%static 'js/jquery.js'  %}" defer=""></script>#}
+{#    <script class="u-script" type="text/javascript" src="{%static 'js/nicepage.js'  %}" defer=""></script>#}
+{#    <meta name="generator" content="Nicepage 4.18.5, nicepage.com">#}
+{#    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">#}
+
+
+{#    <script type="application/ld+json">{#}
+{#		"@context": "http://schema.org",#}
+{#		"@type": "Organization",#}
+{#		"name": "",#}
+{#		"logo": "images/default-logo.png"#}
+{##}
+{#    <meta name="theme-color" content="#478ac9">#}
+{#    <meta property="og:title" content="Главная">#}
+{#    <meta property="og:type" content="website">#}
+  </head>
+
+<body>
+
+
+
+ <div class="wrapper" id="bg-trigger">
+     <header class="header">
+        <div class="header_container">
+            <a href="/" class="header_logo">
+                <h1>TAro</h1>
+            </a>
+            <div class="header_burger">
+                <span>
+                </span>
+            </div>
+            <nav class="header_menu menu">
+                <ul class="menu_list">
+                    <li class="menu_item"><a href="{% url "main:index" %} " class="menu_link">Главная</a></li>
+                    <li class="menu_item" ><a href="" class="menu_link">Услуги</a></li>
+                    <li class="menu_item"><a class="menu_link">Обо мне</a></li>
+                    <li class="menu_item"><a class="menu_link">Контакты</a></li>
+            </ul>
+            </nav>
+{#            <div class="header_button">#}
+{#               {% if request.user.is_authenticated %}#}
+{#                    <a class="btn btn-outline-light me-2" href="{% url "account:logout" %}" role="button">Выйти</a>#}
+{#                {% else %}#}
+{#                    <a class="btn btn-outline-light me-2" href="{% url "account:login" %}" role="button">Log-in</a>#}
+{#                    <a class="btn btn-outline-light me-2" href="{% url "account:register" %}" role="button">Register</a>#}
+{#                {% endif %}#}
+{#            </div>#}
+        </div>
+      </header>
+        <main class="page">
+            {% block content %}
+            {% endblock %}
+        </main>
+ </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+{# <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>#}
+{# <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js"></script>#}
+ <!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+<!-- ScrollMagic -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.js"></script>
+
+<!--GSAP animation plugin should be placed after ScrollMagic! -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
+
+{# <script  src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>#}
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="text/javascript" src={% static "main/js/main.js" %}></script>
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+    let wrapper = document.querySelector('.wrapper')
+    let header_op = document.querySelector('.header')
+    let pagination = document.querySelector('.page_pagination')
+
+
+    let pageSlider = new Swiper('.page',{
+    wrapperClass: "page_wrapper",
+    slideClass: "page_screen",
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    parallax: true,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true
+    },
+    mousewheel:{
+        sensitivity: 1,
+
+    },
+    watchOverflow: true,
+    speed: 800,
+    observe: true,
+    observeParents: true,
+    observeSlideChildren:true,
+
+    pagination:{
+        el: '.page_pagination',
+        type: 'bullets',
+        clickable: true,
+        bulletClass: "page_bullet",
+        bulletActiveClass:  "page_bullet_active",
+    },
+
+    scrollbar:{
+        el: '.page_scroll',
+        dragClass: "page_drag-scroll",
+        draggable: true
+    },
+    init: false,
+
+
+    on:
+        {
+        init: function (){
+            setScrollType();
+            wrapper.classList.add('_loaded');
+            header_op.classList.add('_loaded');
+
+
+            {#pagination.classList.add('_loaded');#}
+        },
+
+        slideChange: function (swiper) {
+    // используется параметр loop true (см. https://swiperjs.com/swiper-api#prop-swiper-realIndex)
+         let activeIndex = swiper.realIndex
+         let block_contact = document.querySelector('.page_screen_container-last')
+         let block_about = document.querySelector('.screen_content-slides-2')
+
+            console.log(activeIndex)
+            let header = $('.header');
+            let header_menu = $('.header_menu');
+            let header_logo = $('.header_logo');
+            let mobileTel = $('.header_button').first(); // сохранем в переменную первый элемент с классом header__tel
+            let hederHeight = header.height(); // вычисляем высоту шапки
+            if (activeIndex > 0){
+                header.addClass('header_fixed');
+                header_menu.addClass('menu_fixed');
+                header_logo.addClass('header_logo_fixed');
+                header.css({
+                    'height': '70px',
+                    'background': '#1a2030',
+                    'transition': '.3s'});
+                mobileTel.fadeOut(1000);
+                $('body').css({
+                    'paddingTop': hederHeight + 'px' // делаем отступ у body, равный высоте шапки
+
+
+             });
+
+
+            }
+
+            else {
+                header.removeClass('header_fixed');
+                header_logo.removeClass('header_logo_fixed');
+                header_menu.removeClass('menu_fixed');
+                header.css({
+                    'height': '80px',
+                    'background': 'none',
+                    'transition': '.1s',
+
+                });
+                mobileTel.fadeIn(1000);
+                $('body').css({
+                    'paddingTop': 0 ,
+                    {#'transform': 'translate(20%, 0px)'// удаляю отступ у body, равный высоте шапки#}
+                })
+            }
+            {# последний слайд #}
+              if (activeIndex === 3){
+                 block_contact.classList.add('_loaded');
+
+             }
+              else {
+                  block_contact.classList.remove('_loaded');
+              }
+              {# предпоследний слайд #}
+                if (activeIndex === 2){
+                 block_about.classList.add('_loaded');
+
+             }
+              else {
+                  block_about.classList.remove('_loaded');
+              }
+              if ( activeIndex ===1) {
+                  let bg_tween = TweenMax.to('.header', 1, {
+                      backgroundColor: '#142850',
+                      ease: Linear.easeNone,
+                  });
+
+                  let controller = new ScrollMagic.Controller();
+                  let bg_scene = new ScrollMagic.Scene({
+                      triggerElement: '#bg-trigger'
+                  })
+                      .setTween(bg_tween);
+                  controller.addScene([
+                      bg_scene,
+                  ]);
+              }
+              {#if (activeIndex === 1){#}
+              {#    header.css({#}
+              {##}
+              {#        'background': 'linear-gradient(to bottom, #0b4e5c,#00A8CC)'#}
+                    {#'height': '70px',#}
+                    {#'background': '#1a2030',#}
+                    {#'transition': '.3s'});#}
+              {#    });#}
+
+
+        },
+
+         resize: function (){
+            setScrollType();
+            },
+    },
+
+});
+
+  function setScrollType(){
+      if(wrapper.classList.contains('_free')){
+          console.log(' 11111111111111111111111111')
+          wrapper.classList.remove('_free');
+          pageSlider.params.freeMode = false;
+      }
+
+      for (let index = 0; index < pageSlider.slides.length; index++) {
+          const pageSlide = pageSlider.slides[index];
+          {#console.log(pageSlide)#}
+          const pageSlideContent = pageSlide.querySelector('.screen_content');
+          {#console.log(pageSlideContent)#}
+          if (pageSlideContent){
+              const pageSlideContentHeight = pageSlideContent.offsetHeight;
+              {#console.log('page---',pageSlideContentHeight)#}
+              {#console.log('window---',window.innerHeight)#}
+              if (pageSlideContentHeight > window.innerHeight-100){
+                  wrapper.classList.add('_free');
+                  pageSlider.params.freeMode = true;
+                  break;
+              }
+          }
+      }
+  }
+
+  pageSlider.init();
+
+
+
+</script>
+
+
+
+</body>
+</html>
+
+{#    <aside>#}
+{#        <img src="{% static 'main/img/Elovoe.png'%}">#}
+{#        <span class="logo">TAro</span>#}
+{#        <h3>Навигация</h3>#}
+{#        <ul>#}
+{#            <a href="{% url "main:index" %}"><li>Main</li></a>#}
+{#            <li>About us</li>#}
+{#            <li>Contact</li>#}
+{#            {% if request.user.is_authenticated %}#}
+{#                <a href="{% url "account:logout" %}"><li>Logout</li></a>#}
+{#            {% else %}#}
+{#                 <a href="{% url "account:login" %}"><li>Log-in</li></a>#}
+{#                <a href="{% url "account:register" %}"><li>Register</li></a>#}
+{#            {% endif %}#}
+{##}
+{#        </ul>#}
+{##}
+{#    </aside>#}
+
+
+
+{#  function menuSlider() {#}
+{#      if (menuLinks.length > 0){#}
+{##}
+{#          for (let index = 0; index < menuLinks.length; index++){#}
+{#              const menuLink = menuLinks[index]#}
+{#              menuLink.addEventListener("click", function (e){#}
+{#                  menuSliderRemove();#}
+{#                  pageSlider.slideTo(index, 800);#}
+{#                  menuLink.classlist.add('_active')#}
+{#                  e.preventDefault();#}
+{##}
+{#              });#}
+{#          }#}
+{#      }#}
+{#  }#}
+{##}
+{#  function menuSliderRemove(){#}
+{#      let menuLinkActive = document.querySelector('.menu_link._active')#}
+{#      if (menuLinkActive) {#}
+{#          menuLinkActive.classList.remove('_active');#}
+{#      }#}
+{#  }#}
+{##}
+{##}
+{#  pageSlider.init()#}

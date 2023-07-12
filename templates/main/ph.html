@@ -1,0 +1,25 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map with Coordinate Input</title>
+  <link rel="stylesheet" href="{% static 'main/css/map.css'%}">
+</head>
+<body>
+  <h1>Enter Coordinates:</h1>
+  <form>
+    Latitude: <input type="text" id="latitude">
+    Longitude: <input type="text" id="longitude">
+    <input type="submit" value="Submit">
+  </form>
+  <div id="map" style="width: 100%; height: 500px"></div>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="{% static 'main/js/map.js'%}"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,344 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}logggggggg{% endblock %}
+
+
+{# ссылаться на ту же часть докумена через id  и рештку # #}
+{% block content %}
+
+
+
+            <div class="page_wrapper">
+                <div class="page_screen screen">
+                    <div class="page_screen_container_title">
+                        <div class="block-img">
+                            <img src="{% static 'main/img/TITLE.jpg' %}" alt="some">
+                        </div>
+                         <div class="screen_content title">
+                            <div class="block-text">
+                              <h1 class="screen_title" data-swiper-parallax="50%" data-swiper-parallax-opacity="0">{{ title }}</h1>
+                                <p class="screen_text">{{ text }}</p>
+                                <a  href=""  class="block-text_button">Подробнее</a>
+{#                                 <p class="screen_text screen_text_opacity">{{ text }}</p>#}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen_body">
+                        <div class="screen_image" data-swiper-parallax="33%" data-swiper-parallax-scale="1.1">
+                            <img class="screen_image-parallax" src="{% static 'main/img/TARO.jpg' %}" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="page_wrapper" >
+                <div class="page_screen screen" >
+                    <div class="page_screen_container-first" >
+                        <h1 class="screen_title-slide" data-swiper-parallax="50%" data-swiper-parallax-opacity="1">Какой то классный заголовок</h1>
+                    </div>
+                    <div class="page_screen_container">
+                        <div class="screen_content-slides">
+                            <div class="mini-block-container" >
+                                <div class="mini-mini-block-container">
+                                    <div class="container-img">
+                                        <div class="container-layout">
+                                            <div class="circle">
+                                            </div>
+                                            <span class="icon">
+                                                <img src="{% static 'main/img/tarot.png' %}" alt="" >
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h3 class="mini-block-container_title">
+                                        Классный заголовок
+                                    </h3>
+                                    <p class="mini-block-container_text">
+                                        классный текст
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="mini-block-container" >
+                                <div class="mini-mini-block-container">
+                                    <div class="container-img">
+                                        <div class="container-layout">
+                                            <div class="circle">
+                                            </div>
+                                            <span class="icon">
+                                                <img src="{% static 'main/img/horoscope.png' %}" alt="" >
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h3 class="mini-block-container_title">
+                                        Классный заголовок
+                                    </h3>
+                                    <p class="mini-block-container_text">
+                                        классный текст
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mini-block-container" >
+                                <div class="mini-mini-block-container">
+                                    <div class="container-img">
+                                        <div class="container-layout">
+                                            <div class="circle">
+                                            </div>
+                                            <span class="icon">
+                                                <img src="{% static 'main/img/runes.png' %}" alt="" >
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h3 class="mini-block-container_title">
+                                        Классный заголовок
+                                    </h3>
+                                    <p class="mini-block-container_text">
+                                        классный текст
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mini-block-container" >
+                                <div class="mini-mini-block-container">
+                                    <div class="container-img">
+                                        <div class="container-layout">
+                                            <div class="circle">
+                                            </div>
+                                            <span class="icon">
+                                                <img src="{% static 'main/img/candle.png' %}" alt="" >
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h3 class="mini-block-container_title">
+                                        Классный заголовок
+                                    </h3>
+                                    <p class="mini-block-container_text">
+                                        классный текст
+                                    </p>
+                                </div>
+                            </div>
+{#                             по какой то причине при постоянном изменении экрана очень лагает и сьежет паралакс#}
+{#                             <div class="screen_body">#}
+{#                        <div class="screen_image" data-swiper-parallax="33%" data-swiper-parallax-scale="1.1">#}
+{#                            <img src="{% static 'main/img/TARO.jpg' %}" alt=""/>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+{#///////////////////////////////////////////////////////////    #}
+
+
+            <div class="page_wrapper" id="bg-trigger">
+                <div class="page_screen screen">
+                    <div class="page_screen_container-2"  data-swiper-parallax-opacity="1">
+                        <div class="screen_content-slides-2">
+                            <div class="block_img-slide-2" >
+                                <div class="block_img-slide-2-container" >
+
+                                </div>
+                            </div>
+                             <div class="block_text-slide-2">
+                                 <div class="block_text-slide-2-container" >
+                                    <h4 class="about_title" data-swiper-parallax="33%" data-swiper-parallax-scale="1.1">Обо мне</h4>
+                                     <p class="about_text" data-swiper-parallax="33%" data-swiper-parallax-scale="1.1"> We create ideas and solutions in
+                                         the field of advertising, websites and e-commerce,
+                                         design and online marketing. </p>
+                                     <p class="about_concluding" data-swiper-parallax="33%" data-swiper-parallax-scale="1.1">
+                                         Татьяна
+                                     </p>
+
+                                </div>
+                            </div>
+
+{#                             по какой то причине при постоянном изменении экрана очень лагает и сьежет паралакс#}
+                            <div class="screen_text-slides" >
+                            <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+{#///////////////////////////////////////////////////////////    #}
+
+
+
+            <div class="page_wrapper">
+                <div class="page_screen screen screen_phone">
+                    <div class="page_screen_container-back">
+                        <h1 class="screen_title-slide" data-swiper-parallax="50%" data-swiper-parallax-opacity="1"></h1>
+                    </div>
+                    <div class="page_screen_container-last">
+                        <div class="screen_content-slides-last">
+
+                            <div class="mini-block-container-last">
+                                <div class="mini-mini-block-container-last">
+                                    <span class="last_img">
+                                        <img src="{% static 'main/img/point.png' %}" alt="">
+                                    </span>
+                                    <h5 class="last_title">
+                                        our main office
+                                    </h5>
+                                    <p class="last_text">
+                                        Текст
+                                    </p>
+                                </div>
+                            </div>
+
+
+                          <div class="mini-block-container-last">
+                                <div class="mini-mini-block-container-last">
+                                    <span class="last_img">
+                                         <img src="{% static 'main/img/telephone.png' %}" alt="">
+                                    </span>
+                                    <h5 class="last_title">
+                                        Текст
+                                    </h5>
+                                    <p class="last_text">
+                                        тееекст
+                                    </p>
+                                </div>
+                            </div>
+
+
+                           <div class="mini-block-container-last">
+                                <div class="mini-mini-block-container-last">
+                                    <span class="last_img">
+                                         <img src="{% static 'main/img/email.png' %}" alt="">
+                                    </span>
+                                    <h5 class="last_title">
+                                        Текст
+                                    </h5>
+                                    <p class="last_text">
+                                        ТекстТекстТекст
+                                    </p>
+                                </div>
+                            </div>
+
+
+                             <div class="mini-block-container-last">
+                                <div class="mini-mini-block-container-last">
+                                    <span class="last_img">
+                                         <img src="{% static 'main/img/point.png' %}" alt="">
+                                    </span>
+                                    <h5 class="last_title">
+                                        Текст
+                                    </h5>
+                                    <p class="last_text">
+                                        Текст Текст Текст
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+
+
+{#                             по какой то причине при постоянном изменении экрана очень лагает и сьежет паралакс#}
+                            <div class="screen_text-slides" >
+                            <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="page_screen_container-second">
+                        <div class="layout-last">
+                            <div class="form_content">
+                                <div class="form_content-container">
+                                    <div class="form_content-form">
+                                        <form>
+                                            <div class="form_content-form-email">
+                                                <label>Email</label>
+                                                <input type="email" placeholder="Enter a valid email address"  name="email" class="input_style">
+                                            </div>
+                                            <div class="form_content-form-name">
+                                                <label>name</label>
+                                                <input type="email" placeholder="naaaaaaaaaame"  name="email" class="input_style">
+                                            </div>
+                                            <div class="form_content-form-message">
+                                                 <label>message</label>
+                                                <input type="email" placeholder="messssssssss"  name="email" class="input_style">
+                                            </div>
+                                            <div class="form_content-form-button">
+                                                <a href="#">Sumbit</a>
+{#                                                <input type="submit" value="submit" >#}
+
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="text_content">
+                                 <h2 class="text_content-title">ТАТАТА</h2>
+                                 <h6 class="text_content-title-second">ТАТАТА</h6>
+                                 <p class="text_content-text">ТАТАТА</p>
+                                 <div class="text_content-soc">
+                                     <a href="/" class="soc_url" target="_blank">
+                                         <span class="soc_url-icon">
+                                             <img class="soc_img" src="{% static 'main/img/instagram.png' %}" alt="">
+{#                                             <svg class="svg_link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 11">#}
+{#                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7d32"></use>#}
+{#                                             </svg>#}
+                                         </span>
+                                     </a>
+                                     <a href="" class="soc_url" target="_blank">
+                                            <span class="soc_url-icon">
+                                             <img class="soc_img" src="{% static 'main/img/telegram.png' %}" alt="">
+                                         </span>
+                                     </a>
+                                     <a href="" class="soc_url" target="_blank">
+                                           <span class="soc_url-icon">
+                                             <img class="soc_img" src="{% static 'main/img/vk.png' %}" alt="">
+                                         </span>
+                                     </a>
+                                     <a href="" class="soc_url" target="_blank">
+                                           <span class="soc_url-icon">
+                                             <img class="soc_img" src="{% static 'main/img/facebook.png' %}" alt="">
+                                         </span>
+                                     </a>
+
+                                 </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+{#///////////////////////////////////////////////////////////    #}
+
+
+      <div class="page_pagination"></div>
+            <div class="page_scroll"></div>
+
+
+
+
+{% endblock %}
+
+
+{#      <div>#}
+{#        <span class="user">#}
+{#            {% if request.user.is_authenticated %}#}
+{#                Hello {{ request.user.first_name }},#}
+{#                <a href="{% url "account:logout" %}">Logout</a>#}
+{#            {% else %}#}
+{#                <a href="{% url "account:login" %}">Log-in</a>#}
+{#            {% endif %}#}
+{#        </span>#}
+{#    </div>#}
+{#        <a class="btn btn-outline-dark" href="{% url 'account:login'  %}" role="button">log/reg</a>#}

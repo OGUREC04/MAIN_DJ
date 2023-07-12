@@ -1,0 +1,500 @@
+{% load static %}
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>FLEXBOX</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'main/dist/semantic.min.css'%}">
+        <link rel="stylesheet" href="{% static 'main/css/base.css'%}">
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	</head>
+	<!-- Отображаемое тело страницы -->
+	<body>
+		<div class="wrapper">
+			<div class="page">
+				<header>
+					<div class="container_head">
+						<div class="header_flex">
+							<div class="header_right">
+								<div class="header_right_row">
+									<div class="logo">
+										<a href="#">  <img  src="{% static 'main/img/logo.png' %}" alt=""> </a>
+
+									</div>
+
+									<a class="title" href="#">Life-line </a>
+
+									<div class="menu">
+										<div class="menu_row">
+											<a href="#content"> Главная </a>
+											<a href="#about"> О нас </a>
+											<a href="#about_2"> Контакты </a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="header_left">
+								<div class="header_left_row">
+									<div class="burger">
+										<span> </span>
+									</div>
+									<div class="icon">
+										<div class="icon_row">
+											<a href="#" class="social-link1"> <img  src="{% static 'main/img/940987_vk_icon.png' %}" alt="">  </a>
+											<a href="#" class="social-link1">  <img  src="{% static 'main/img/3787425_telegram_logo_messanger_social_social media_icon.png' %}" alt="" class="bi bi-tg" >   </a>
+											<a href="#" class="social-link1">  <img  src="{% static 'main/img/6636566_instagram_social media_social network_icon.png' %}" alt="" class="bi bi-instagram">  </a>
+											<a href="#"> </a>
+										</div>
+									</div>
+
+									<button data-text="Awesome" class="button">
+									    <span class="actual-text">&nbsp;Strat&nbsp;</span>
+									    <span class="hover-text" aria-hidden="true">&nbsp;Strat&nbsp;</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<div class="main-screen">
+					<div class="container_main">
+						<div class="main-screen_flex">
+							<p class="preview">медецинский стартап</p>
+							<h1>Life - line</h1>
+							<p class="losung">Ваше здоровье - наш приоретет</p>
+							<p class="about">Инвестрируйе в ваше здоровье</p>
+							<div class="main-screen_btn">
+								<button class="button2 first " >Узнать подробнее</button>
+								<button class="button2 second" >Инвестировать</button>
+							</div>
+						</div>
+
+
+
+
+                        <div class="popup">
+							<div class="closeModal"></div>
+							<div class="popup_card">
+								  <div class="popup_card2">
+								    <form method="post" class="popup_form" action=".">
+                                        <div class="popup_field">
+                                            <label>
+                                                <input  required="" type="tel" class="popup_input-field phone"  placeholder="number" autocomplete="off" name="number"
+                                                pattern="[7-8]{1}[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}">
+                                            </label>
+                                        </div>
+
+                                        <div class="popup_field">
+                                            <label>
+                                                <input  required="" type="text" class="popup_input-field name"  placeholder="name" autocomplete="off" name="number_name">
+                                            </label>
+                                        </div>
+                                        {% csrf_token %}
+                                        <button class="popup_button3"  type="submit" name="submit" >Send Demo</button>
+								    </form>
+								  </div>
+                            </div>
+						</div>
+
+
+
+
+					<div class="mainblock__footer">
+							<a href="#content" class="mainblock__arrow goto"> <img  src="{% static 'main/img/172458_down_arrow_icon.png' %}" alt=""></a>
+						</div>
+
+					</div>
+
+
+				</div>
+
+				<div  class="content">
+					<div class="about_us" id="content">
+						<div class="container">
+							<div class="about_us_column" >
+								<div class="about_us_text">
+									<div class="about_us_text_column" >
+										<p class="title_text">Мы создаем приложение для вызова свободного медработника, рядом с пациентом. </p>
+
+										<p class="blure_text">Такое решение снизит нагрузку на СМП, уменьшит время ожидания врача для пациентов, снизит расходы по выплатам ОМС, даст дополнительный заработок медработникам.</p>
+									</div>
+								</div>
+								<div class="about_us_img">
+								    <img  src="{% static 'main/img/4_hands_.png' %}" alt="">
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<section class="real_problem" id="about">
+						<div class="container">
+							<div class="real_problem_text">
+								<div class="real_problem_column">
+									<p class="real_problem_title">Продукт Life-Line решает реальные проблемы </p>
+									<p class="real_problem_blure">Платформа Life-Line разработана командой российских специалистов  специально для решения
+									актуальных проблем - задач российских государственных больниц</p>
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="card_menu">
+						<div class="container">
+							<div class="card_menu_row">
+								<div class="card_item">
+								  <div class="card_menu_content">
+									    <p class="heading">Card Hover Effect
+									    </p><p class="para">
+									      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
+									      laboriosam at voluptas minus culpa deserunt delectus sapiente
+									      inventore pariatur
+									    </p>
+									    <button class="btn">Read more</button>
+									</div>
+								</div>
+
+
+								<div class="card_item">
+								  <div class="card_menu_content">
+									    <p class="heading">Card Hover Effect
+									    </p><p class="para">
+									      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
+									      laboriosam at voluptas minus culpa deserunt delectus sapiente
+									      inventore pariatur
+									    </p>
+									    <button class="btn">Read more</button>
+								    </div>
+								</div>
+								<div class="card_item">
+								  <div class="card_menu_content">
+									    <p class="heading">Card Hover Effect
+									    </p><p class="para">
+									      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
+									      laboriosam at voluptas minus culpa deserunt delectus sapiente
+									      inventore pariatur
+									    </p>
+									    <button class="btn">Read more</button>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+
+					<section class="real_problem gray">
+						<div class="container">
+							<div class="real_problem_text">
+								<div class="real_problem_column">
+									<p class="real_problem_title">Технологии Life-Line </p>
+									<p class="real_problem_blure">Простые, быстрые и наиболее выгодные решения, благодаря применению современных технологий</p>
+								</div>
+							</div>
+						</div>
+						<section class="circle_info">
+							<div class="container">
+								<div class="circle_info_row">
+									<div class="circle_item">
+										<div class="circle_item_column">
+											<div class="circle_item_img">
+                                                 <img  src="{% static 'main/img/ii.svg' %}" alt="">
+											</div>
+											<p class="circle_item_title">
+												Big Data
+											</p>
+											<p class="circle_item_text">
+												Большие данные внутри помогают находить все, что нужно для оценки рисков.
+											</p>
+
+										</div>
+									</div>
+									<div class="circle_item">
+										<div class="circle_item_column">
+											<div class="circle_item_img">
+                                                 <img  src="{% static 'main/img/ii.svg' %}" alt="">
+											</div>
+											<p class="circle_item_title">
+												Big Data
+											</p>
+											<p class="circle_item_text">
+												Большие данные внутри помогают находить все, что нужно для оценки рисков.
+											</p>
+
+										</div>
+									</div>
+									<div class="circle_item">
+										<div class="circle_item_column">
+											<div class="circle_item_img">
+												 <img  src="{% static 'main/img/ii.svg' %}" alt="">
+											</div>
+											<p class="circle_item_title">
+												Big Data
+											</p>
+											<p class="circle_item_text">
+												Большие данные внутри помогают находить все, что нужно для оценки рисков.
+											</p>
+
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</section>
+					</section>
+
+					<section class="investor">
+						<div class="container">
+							<div class="investor_area">
+								<div class="investor_area_column">
+									<p class="investor_title">
+										Investor? join our rocket!
+									</p>
+									<form class="investor_form"  method="post">
+										<div class="investor_form_row">
+											<input required="" placeholder="Email Address" type="email" id="input-field" name="em">
+                                             {% csrf_token %}
+											<button class="investor_button"><span>Send pitch deck
+											</span></button>
+										</div>
+									</form>
+
+
+								</div>
+							</div>
+						</div>
+
+					</section>
+
+
+					<section class="contact" id="about_2">
+						<div class="container">
+							<div class="contact_contact" >
+								<div class="contact_column">
+									<p class="contact_title" >
+										Наши контакты
+									</p>
+									<p class="contact_about">
+
+									</p>
+									<div class="contact_row" >
+										<div class="contact_cards">
+											<div class="contact_cards_row">
+												<div class="contact_cards_item">
+													<div class="contact_cards_item_column">
+														<div class="bg"></div>
+														<div class="blob"></div>
+														<div class="contact_cards_item_img">
+                                                             <img  src="{% static 'main/img/2674096_object_email_web_essential_icon.png' %}" alt="">
+														</div>
+														<p class="contact_cards_item_title">
+															Email
+														</p>
+														<p class="contact_cards_item_about">
+															Наша дружная команда готова помочь.
+														</p>
+														<a href="#" class="contact_cards_item_email">
+															ll@gmail.com
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="contact_cards">
+											<div class="contact_cards_row">
+												<div class="contact_cards_item">
+													<div class="contact_cards_item_column">
+														<div class="bg"></div>
+														<div class="blob"></div>
+														<div class="contact_cards_item_img">
+                                                             <img  src="{% static 'main/img/2674096_object_email_web_essential_icon.png' %}" alt="">
+														</div>
+														<p class="contact_cards_item_title">
+															Telegram
+														</p>
+														<p class="contact_cards_item_about">
+															Наша дружная команда готова помочь.
+														</p>
+														<a href="#" class="contact_cards_item_email">
+															tg
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="contact_cards">
+											<div class="contact_cards_row">
+												<div class="contact_cards_item">
+													<div class="contact_cards_item_column">
+														<div class="bg"></div>
+														<div class="blob"></div>
+														<div class="contact_cards_item_img">
+                                                             <img  src="{% static 'main/img/2674096_object_email_web_essential_icon.png' %}" alt="">
+														</div>
+														<p class="contact_cards_item_title">
+															ВК
+														</p>
+														<p class="contact_cards_item_about">
+															Наша дружная команда готова помочь.
+														</p>
+														<a href="#" class="contact_cards_item_email">
+															ll@gmail.com
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</section>
+
+
+
+					<section class="accord">
+						<div class="container ac">
+							<div class="accord_accord">
+								<div class="accord_column">
+									<p class="accord_title"> Frequently Asked Questions </p>
+									<div class="ui accordion">
+									  <div class="title">
+									    <i class="dropdown icon"></i>
+									    What is a dog?
+									  </div>
+									  <div class="content">
+									    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+									  </div>
+									  <div class="title">
+									    <i class="dropdown icon"></i>
+									    What kinds of dogs are there?
+									  </div>
+									  <div class="content">
+									    <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+									  </div>
+									  <div class="title">
+									    <i class="dropdown icon"></i>
+									    How do you acquire a dog?
+									  </div>
+									  <div class="content">
+									    <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+									    <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+									  </div>
+								  </div>
+								</div>
+							</div>
+						</div>
+				</section>
+
+
+				</div>
+
+				<footer>
+					<div class="container">
+						<div class="footer_up">
+							<div class="footer_up_row">
+								<div class="footer_up_item">
+									<div class="footer_up_item_column">
+										<p class="footer_up_title">
+											SEE OTHER BOOKS
+										</p>
+										<div class="footer_up_list">
+											<ul>
+												<li>Bestsellers</li>
+												<li>All books</li>
+												<li>Our authors</li>
+												<li>Our authors</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div class="footer_up_item">
+									<div class="footer_up_item_column">
+										<p class="footer_up_title">
+											SEE OTHER BOOKS
+										</p>
+										<div class="footer_up_list">
+											<ul>
+												<li>Bestsellers</li>
+												<li>All books</li>
+												<li>Our authors</li>
+												<li>Our authors</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div class="footer_up_item">
+									<div class="footer_up_item_column">
+										<p class="footer_up_title">
+											SEE OTHER BOOKS
+										</p>
+										<div class="footer_up_list">
+											<ul>
+												<li>Bestsellers</li>
+												<li>All books</li>
+												<li>Our authors</li>
+												<li>Our authors</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div class="footer_up_item">
+									<div class="footer_up_item_column">
+										<p class="footer_up_title">
+											SEE OTHER BOOKS
+										</p>
+										<div class="footer_up_list">
+											<ul>
+												<li>Bestsellers</li>
+												<li>All books</li>
+												<li>Our authors</li>
+												<li>Our authors</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="footer_down">
+							<div class="footer_down_row">
+								<p class="footer_down_footer">© 2023 Life-line </p>
+							</div>
+						</div>
+					</div>
+
+				</footer>
+
+			</div>
+		</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'main/js/vendors.js'%}"></script>
+    <script src="{% static 'main/js/main.js'%}"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+        <script src="{% static 'main/dist/semantic.min.js'%}"></script>
+    <script src="{% static 'main/js/sema.js'%}"></script>
+	</body>
+	</html>

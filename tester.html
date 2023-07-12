@@ -1,0 +1,302 @@
+{% load static %}
+
+{#TODO: порешать какого хуя точки не плавно появляются  #}
+{#TODO: как при смещение шапки плавно перемещать текст #}
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{% block title %} my site{% endblock %}</title>
+{#    <link rel="stylesheet" href="{%static 'css/nicepage.css'  %}" media="screen">#}
+{#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">#}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Yomogi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+
+{#    <script class="u-script" type="text/javascript" src="{%static 'js/jquery.js'  %}" defer=""></script>#}
+{#    <script class="u-script" type="text/javascript" src="{%static 'js/nicepage.js'  %}" defer=""></script>#}
+{#    <meta name="generator" content="Nicepage 4.18.5, nicepage.com">#}
+{#    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">#}
+
+
+{#    <script type="application/ld+json">{#}
+{#		"@context": "http://schema.org",#}
+{#		"@type": "Organization",#}
+{#		"name": "",#}
+{#		"logo": "images/default-logo.png"#}
+{##}
+{#    <meta name="theme-color" content="#478ac9">#}
+{#    <meta property="og:title" content="Главная">#}
+{#    <meta property="og:type" content="website">#}
+  </head>
+
+<body>
+
+
+
+ <div class="wrapper">
+
+        <main class="page">
+            {% block content %}
+            {% endblock %}
+        </main>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script type="text/javascript" src={% static "main/js/main.js" %}></script>
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+    let wrapper = document.querySelector('.wrapper')
+    let header_op = document.querySelector('.header')
+    let pagination = document.querySelector('.page_pagination')
+
+    let pageSlider = new Swiper('.page',{
+    wrapperClass: "page_wrapper",
+    slideClass: "page_screen",
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    parallax: true,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true
+    },
+    mousewheel:{
+        sensitivity: 1,
+
+    },
+    watchOverflow: true,
+    speed: 800,
+    observe: true,
+    observeParents: true,
+    observeSlideChildren:true,
+
+    pagination:{
+        el: '.page_pagination',
+        type: 'bullets',
+        clickable: true,
+        bulletClass: "page_bullet",
+        bulletActiveClass:  "page_bullet_active",
+    },
+
+    scrollbar:{
+        el: '.page_scroll',
+        dragClass: "page_drag-scroll",
+        draggable: true
+    },
+    init: false,
+
+
+    on:
+        {
+        init: function (){
+            setScrollType();
+            wrapper.classList.add('_loaded');
+            header_op.classList.add('_loaded');
+
+            {#pagination.classList.add('_loaded');#}
+        },
+
+        slideChange: function (swiper) {
+    // используется параметр loop true (см. https://swiperjs.com/swiper-api#prop-swiper-realIndex)
+         let activeIndex = swiper.realIndex
+            console.log(activeIndex)
+            let header = $('.header');
+            let mobileTel = $('.buttons-header').first(); // сохранем в переменную первый элемент с классом header__tel
+            let hederHeight = header.height(); // вычисляем высоту шапки
+            if (activeIndex > 0){
+                header.addClass('header_fixed');
+                header.css({
+                    'padding': '2px 0',
+                    'background': '#1a2030',
+                    'transition': '.3s'});
+                mobileTel.fadeOut(1000);
+                $('body').css({
+                    'paddingTop': hederHeight + 'px' // делаем отступ у body, равный высоте шапки
+
+
+             });
+            } else {
+                header.removeClass('header_fixed');
+                header.css({
+                    'padding': '10px 0',
+                    'background': '#1a2030',
+                    'transition': '.3s'
+                });
+                mobileTel.fadeIn(1000);
+                $('body').css({
+                    'paddingTop': 0 ,
+                    {#'transform': 'translate(20%, 0px)'// удаляю отступ у body, равный высоте шапки#}
+                })
+            }
+        },
+         resize: function (){
+            setScrollType();
+            }
+    },
+
+});
+
+  function setScrollType(){
+      if(wrapper.classList.contains('_free')){
+          console.log(' 11111111111111111111111111')
+          wrapper.classList.remove('_free');
+          pageSlider.params.freeMode = false;
+      }
+
+      for (let index = 0; index < pageSlider.slides.length; index++) {
+          const pageSlide = pageSlider.slides[index];
+          {#console.log(pageSlide)#}
+          const pageSlideContent = pageSlide.querySelector('.screen_content');
+          {#console.log(pageSlideContent)#}
+          if (pageSlideContent){
+              const pageSlideContentHeight = pageSlideContent.offsetHeight;
+              {#console.log('page---',pageSlideContentHeight)#}
+              {#console.log('window---',window.innerHeight)#}
+              if (pageSlideContentHeight > window.innerHeight-100){
+                  wrapper.classList.add('_free');
+                  pageSlider.params.freeMode = true;
+                  break;
+              }
+          }
+      }
+  }
+
+  pageSlider.init();
+</script>
+
+
+
+</body>
+</html>
+
+{#    <aside>#}
+{#        <img src="{% static 'main/img/Elovoe.png'%}">#}
+{#        <span class="logo">TAro</span>#}
+{#        <h3>Навигация</h3>#}
+{#        <ul>#}
+{#            <a href="{% url "main:index" %}"><li>Main</li></a>#}
+{#            <li>About us</li>#}
+{#            <li>Contact</li>#}
+{#            {% if request.user.is_authenticated %}#}
+{#                <a href="{% url "account:logout" %}"><li>Logout</li></a>#}
+{#            {% else %}#}
+{#                 <a href="{% url "account:login" %}"><li>Log-in</li></a>#}
+{#                <a href="{% url "account:register" %}"><li>Register</li></a>#}
+{#            {% endif %}#}
+{##}
+{#        </ul>#}
+{##}
+{#    </aside>#}
+
+
+
+{#  function menuSlider() {#}
+{#      if (menuLinks.length > 0){#}
+{##}
+{#          for (let index = 0; index < menuLinks.length; index++){#}
+{#              const menuLink = menuLinks[index]#}
+{#              menuLink.addEventListener("click", function (e){#}
+{#                  menuSliderRemove();#}
+{#                  pageSlider.slideTo(index, 800);#}
+{#                  menuLink.classlist.add('_active')#}
+{#                  e.preventDefault();#}
+{##}
+{#              });#}
+{#          }#}
+{#      }#}
+{#  }#}
+{##}
+{#  function menuSliderRemove(){#}
+{#      let menuLinkActive = document.querySelector('.menu_link._active')#}
+{#      if (menuLinkActive) {#}
+{#          menuLinkActive.classList.remove('_active');#}
+{#      }#}
+{#  }#}
+{##}
+{##}
+{#  pageSlider.init()#}
+   <div class="header">
+        <header>
+    {#    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"#}
+          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <h1 class="header_name">TAro</h1>
+          </a>
+
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+                <a href="{% url "main:index" %}"><li>Главная</li></a>
+               <a href="#Почтовый_адрес"><li>почтовый адрес.</li></a>
+                <li>Контакты</li>
+    {#            {% if request.user.is_authenticated %}#}
+    {#                <a href="{% url "account:logout" %}" ><li>Logout</li></a>#}
+    {#            {% else %}#}
+    {#                 <a href="{% url "account:login" %}"><li>Log-in</li></a>#}
+    {#                <a href="{% url "account:register" %}"><li>Register</li></a>#}
+    {#            {% endif %}#}
+
+            </ul>
+
+        {#      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">#}
+        {##}
+        {#        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>#}
+        {#        <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>#}
+        {#        <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>#}
+        {#        <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>#}
+        {#        <li><a href="#" class="nav-link px-2 link-dark">About</a></li>#}
+        {#      </ul>#}
+
+          <div class="buttons-header">
+               {% if request.user.is_authenticated %}
+                    <a class="btn btn-outline-light me-2" href="{% url "account:logout" %}" role="button">Выйти</a>
+                {% else %}
+                    <a class="btn btn-outline-light me-2" href="{% url "account:login" %}" role="button">Log-in</a>
+                    <a class="btn btn-outline-light me-2" href="{% url "account:register" %}" role="button">Register</a>
+                {% endif %}
+    {#       <a class="btn btn-outline-dark" href="{% url 'account:login'  %}" role="button">log/reg</a>#}
+    {#        <button type="button" class="btn btn-outline-primary me-2">Login</button>#}
+    {#        <button type="button" class="btn btn-primary">Sign-up</button>#}
+          </div>
+        </header>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="page_wrapper">
+                <div class="page_screen screen">
+                    <div class="page_screen_content">
+                        <div class="screen_content">
+                            <div></div>
+                          <h1 class="screen_title" data-swiper-parallax="50%" data-swiper-parallax-opacity="0">{{ title }}</h1>
+                             <p class="screen_text">{{ text }}</p>
+                        </div>
+                    </div>
+                    <div class="screen_body">
+                        <div class="screen_image" data-swiper-parallax="33%" data-swiper-parallax-scale="1.1">
+                            <img src="{% static 'main/img/TARO.jpg' %}" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
