@@ -73,13 +73,10 @@
 							<p class="losung">Ваше здоровье - наш приоретет</p>
 							<p class="about">Инвестрируйе в ваше здоровье</p>
 							<div class="main-screen_btn">
-								<button class="button2 first " >Узнать подробнее</button>
-								<button class="button2 second" >Инвестировать</button>
+								<a class="button2 first"  >Узнать подробнее</a>
+								<a class="button2 second" href="#investor">Инвестировать</a>
 							</div>
 						</div>
-
-
-
 
                         <div class="popup">
 							<div class="closeModal"></div>
@@ -100,6 +97,9 @@
                                         </div>
                                         {% csrf_token %}
                                         <button class="popup_button3"  type="submit" name="submit" >Send Demo</button>
+                                            <p class="popup_confirm">
+									Нажимая кнопку "Запросить Демо", вы подтверждаете согласие с соглашением об использовании программы и даете согласие на обработку персональных данных.
+								</p>
 								    </form>
 								  </div>
                             </div>
@@ -256,7 +256,7 @@
 
 					<section class="investor">
 						<div class="container">
-							<div class="investor_area">
+							<div class="investor_area" id="investor">
 								<div class="investor_area_column">
 									<p class="investor_title">
 										Investor? join our rocket!

@@ -25,6 +25,7 @@ if (iconMenu) {
 const btn = document.querySelector('.button');
 const pop = document.querySelector('.popup');
 const close = document.querySelector('.closeModal');
+const btnSecond = document.querySelector('.button2.first');
 if (btn) {
   btn.addEventListener("click", function (e) {
     document.body.classList.toggle('_lock');
@@ -32,6 +33,15 @@ if (btn) {
     pop.classList.toggle('_active');
   });
 }
+
+if (btnSecond) {
+  btnSecond.addEventListener("click", function (e) {
+    document.body.classList.toggle('_lock');
+    btnSecond.classList.toggle('_active');
+    pop.classList.toggle('_active');
+  });
+}
+
 
  if (close){
   close.addEventListener("click", function (e) {
@@ -41,4 +51,4 @@ if (btn) {
   
 }
 
-
+$(".phone").mask("+7(999)999-9999");
