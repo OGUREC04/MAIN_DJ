@@ -1,0 +1,123 @@
+{% load static %}
+
+
+{#{% block title %}Edit your account{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <h1>Edit your account</h1>#}
+{#    <p>You can edit your account using the following form:</p>#}
+{#    <form action="." method="post" enctype="multipart/form-data">#}
+{#        {{ user_form.as_p }}#}
+{#        {{ profile_form.as_p }}#}
+{#        {% csrf_token %}#}
+{#        <p><input type="submit" value="Save changes"></p>#}
+{#    </form>#}
+{#{% endblock %}#}
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+{#{% if "doctor" in perms %}#}
+{#    {% block title %}Edit your account{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <h1>Edit your account</h1>#}
+{#    <p>You can edit your account using the following form:</p>#}
+{#    <form action="." method="post" enctype="multipart/form-data">#}
+{#        {{ user_form.as_p }}#}
+{#        {{ profile_form.as_p }}#}
+{#        {% csrf_token %}#}
+{#        <p><input type="submit" value="Save changes"></p>#}
+{#    </form>#}
+{#{% endblock %}#}
+{#{% endif %}#}
+
+
+
+
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>edit</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+		 <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+         <link rel="stylesheet" href="{% static 'main/css/style_main_menu.css'%}">
+        <link rel="stylesheet" href="{% static 'main/css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+
+		<!-- Отображаемое тело страницы -->
+	<body>			<!-- блок -->
+		<div class="wrapper">
+				<main class="page">
+					<div class="main-screen">
+				<!-- флекс контейнер блока -->
+					<div class="flex_container_choose_user">
+
+						<!-- 1 элемент -->
+
+							<div class="train">
+								<div class="choose_user_text_flex_container">
+									<div class="choose_user_text_flex_container_head">
+											<div class="choose_user_text_flex_container_head_img">
+												<img src="img/logo.png" alt="">
+											</div>
+											<h1> Пациент  </h1>
+											<p class="title">Редактирование профиля </p>
+									</div>
+
+
+										<div class="choose_user_text_flex_container_choose doctor_register">
+											<form class="form" action="." method="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                {% for field in  user_form %}
+                                                 <label>
+											        {{field}}
+											        <span></span>
+											    </label>
+
+                                                 {% endfor %}
+												<div class="user user_edit">
+													<div class="avatar-upload">
+												        <div class="avatar-edit">
+												         {{profile_form.photo}}
+												            <label class="pen" for="imageUpload"></label>
+												        </div>
+												        <div class="avatar-preview">
+												            <div id="imagePreview" style="background-image: url('/media/{{profile_form.photo.value }}');">
+												            </div>
+												        </div>
+												    </div>
+												    <div class="text_name">
+													<p class="user_user">пользователь</p>
+													<p class="name">{{ user_form.first_name.value }}</p>
+													</div>
+												</div>
+                                                {{profile_form.date_of_birth}}
+											    <button class="submit">Submit</button>
+
+											</form>
+										</div>
+									</div>
+								</div>
+							<!-- флекс контейнер блока текста -->
+							</div>
+						<!-- 2 элемент -->
+						<div class="choose_user_img ibg">
+							<img src="{% static 'main/img/doctor_in_maska.png' %}" alt="">
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'main/js/avatar.js'%}"></script>
+    <script src="{% static 'main/js/vendors.js'%}"></script>
+    <script src="{% static 'main/js/main.js'%}"></script>
+	</body>
+	</html>

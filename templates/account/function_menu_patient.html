@@ -1,0 +1,84 @@
+{% load static %}
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>register</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'main/css/style_main_menu.css'%}">
+         <link rel="stylesheet" href="{% static 'main/css/function_menu.css'%}">
+
+		<!-- Кодировка страницы --> 
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+
+			<!-- Отображаемое тело страницы -->	
+	<body>	
+
+
+		<div class="wrapper">
+			<div class="page">
+				<div class="menu">
+					<div class="menu_column">
+								<div class="user">
+									<div class="avatar-upload">
+								        <div class="avatar-preview">
+								            <div id="imagePreview"  style="background-image: url('/media/{{profile_form.photo.value }}');">
+								            </div>
+								        </div>
+								    </div>
+								    <div class="text_name">
+									<p class="user_user">пользователь</p>
+									<p class="name">Борис Александров</p>
+									</div>
+
+								</div>
+
+								<div class="line">
+									
+								</div>
+						<ul class="menu_func">
+							<li class="item1"><a class="bn" href="{% url "account:edit" %}">Профиль </a></li>
+						    <li class="item2"><a  class="bn" href="#">Вызов врача</a></li>
+						    <li class="item3"><a  class="bn" href="#">Сообщения</a></li>
+						    <li class="item4"><a  class="bn" href="#">История</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- блок -->	
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="{% static 'main/js/avatar.js'%}"></script>
+        <script src="{% static 'main/js/vendors.js'%}"></script>
+        <script src="{% static 'main/js/main.js'%}"></script>
+
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+          <script src="{% static 'main/dist/semantic.min.js'%}"></script>
+          <script src="{% static 'main/js/sema.js'%}"></script>
+
+	</body>
+	</html>
