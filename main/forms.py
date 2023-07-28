@@ -12,3 +12,4 @@ class UserForm(forms.ModelForm):
 
 class EmailForm(forms.Form):
     em = forms.EmailField()
+

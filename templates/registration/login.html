@@ -1,22 +1,126 @@
-{% extends "base.html" %}
-{% block title %}Log-in{% endblock %}
-{% block content %}
-    <h1>Log-in</h1>
-    {% if form.errors %}
-        <p>
-            Your username and password didn't match.
-            Please try again.
-        </p>
-    {% else %}
-        <p>Please, use the following form to log-in. If you don't have an account <a href="{% url "account:register" %}">register here</a></p>
-    {% endif %}
-    <div >
-        <form action="{% url 'account:login' %}" method="post">
-            {{ form.as_p }}
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}"/>
-            <p><input type="submit" value="Log-in"></p>
-        </form>
-        <p><a href="{% url "account:password_reset" %}">Forgotten your password?</a></p>
-    </div>
-{% endblock %}
+{% load static %}
+
+
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>register</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+		 <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+        <style type="text/css">
+
+            .form label input {
+              width: 100%;
+              padding: 10px 10px 20px 10px;
+              outline: 0;
+              border: 1px solid rgba(105, 105, 105, 0.397);
+              border-radius: 10px;
+            }
+
+            .form label input + span {
+              position: absolute;
+              left: 10px;
+              top: 15px;
+              color: grey;
+              font-size: 0.9em;
+              cursor: text;
+              transition: 0.3s ease;
+            }
+
+            .form label input:placeholder-shown + span {
+              top: 15px;
+              font-size: 0.9em;
+            }
+
+            .form label input:focus + span,.form label .input:valid + span {
+              top: 30px;
+              font-size: 0.7em;
+              font-weight: 600;
+            }
+
+            .form label input:valid + span {
+              color: green;
+            }
+
+        </style>
+	</head>
+
+		<!-- Отображаемое тело страницы -->
+	<body>			<!-- блок -->
+		<div class="wrapper">
+				<main class="page">
+					<div class="main-screen">
+				<!-- флекс контейнер блока -->
+					<div class="flex_container_choose_user">
+						<!-- 1 элемент -->
+
+							<div class="train">
+								<div class="choose_user_text_flex_container">
+									<div class="choose_user_text_flex_container_head">
+											<div class="choose_user_text_flex_container_head_img log">
+												<img src="img/logo.png" alt="">
+											</div>
+											<h1> Пациент </h1>
+											<p class="title">Логин </p>
+									</div>
+
+										<div class="social-buttons">
+										        <button class="social-button facebook">
+								                    <span class="google">Sign in with Google</span>
+										        </button>
+										    </div>
+										<div class="social-message">
+											<div class="line"></div>
+											<p class="message">Или</p>
+											<div class="line"></div>
+										</div>
+
+
+										<div class="choose_user_text_flex_container_choose doctor_register  login">
+                                            {% if form.errors %}
+                                                <p class="login_error">
+                                                    Your username and password didn't match.
+                                                    Please try again.
+                                                </p>
+                                            {% else %}
+                                                <p class="login_advice">Please, use the following form to log-in. If you don't have an account <a href="{% url "account:register" %}">register here</a></p>
+                                            {% endif %}
+											<form class="form"  action="{% url 'account:login' %}" method="post">
+                                              {% csrf_token %}
+                                                {% for field in form %}
+
+											    <label>
+											        {{field}}
+											        <span></span>
+											    </label>
+
+                                                 {% endfor %}
+
+											    <button class="submit">Submit</button>
+											     <p class="signin">Еще не зарегестрирован? <a href="#">Регистрация</a> </p>
+											</form>
+										</div>
+									</div>
+								</div>
+							<!-- флекс контейнер блока текста -->
+							</div>
+						<!-- 2 элемент -->
+						<div class="choose_user_img ibg">
+                            <img src="{% static 'main/img/doctor_in_maska.png' %}" alt="">
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'main/js/vendors.js'%}"></script>
+    <script src="{% static 'main/js/main.js'%}"></script>
+	</body>
+	</html>

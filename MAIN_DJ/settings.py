@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3nt9o!wkbcsn97*l)9e8pgkpdb7gltd^+l0_3mam9jp9xfl@!t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','8942-77-222-117-30.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','c2bc-77-222-117-30.ngrok-free.app']
 CSRF_TRUSTED_ORIGINS = ['https://8942-77-222-117-30.ngrok-free.app']
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'account',
     'articles.apps.ArticlesConfig',
     'main',
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

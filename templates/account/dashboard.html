@@ -1,8 +1,65 @@
-{% extends "base.html" %}
-
-{% block title %}Dashboard{% endblock %}
-
-{% block content %}
-    <h1>Dashboard</h1>
-    <p>Welcome to your dashboard.</p>
-{% endblock %}
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+{% load static %}
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>FLEXBOX</title>
+		<!-- Адаптив -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<!-- Подключаем CSS -->
+{#		<link rel="stylesheet" href="css/style.css" />#}
+        <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<!-- Отображаемое тело страницы -->	
+	<body>			<!-- блок -->	
+		<div class="wrapper">
+				<main class="page">
+					<div class="main-screen">
+				<!-- флекс контейнер блока -->	
+					<div class="flex_container_choose_user">
+						<!-- 1 элемент -->	
+						<div class="choose_user_text">
+							<div class="train">	
+							<!-- флекс контейнер блока текста -->	
+								<div class="choose_user_text_flex_container">
+									<div class="choose_user_text_flex_container_head">
+											<div class="choose_user_text_flex_container_head_img">
+												<img  src="{% static 'main/img/logo.png' %}" alt="">
+											</div>
+											<h1> LIFE LINE </h1>
+											<p>Приложения для вызова медицинского сотрудника</p>
+										</div>
+										<div class="choose_user_text_flex_container_choose">
+											<div class="button-borders">
+												  <a class="primary-button primary-button_second" href="{% url "account:doctor_register" %}"> Врач
+												  </a>
+											</div>
+											<div class="button-borders">
+												  <a class="primary-button" href="{% url "account:register" %}"> Пользователь
+												  </a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!-- 2 элемент -->
+						<div class="choose_user_img ibg">
+                            <img  src="{% static 'main/img/image 1.png' %}" alt="">
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+{#	<script src="js/vendors.js"></script>#}
+    <script src="{% static 'main/js/vendors.js'%}"></script>
+    <script src="{% static 'main/js/main.js'%}"></script>
+	{#<script src="js/main.js"></script>#}
+	</body>
+	</html>

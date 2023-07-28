@@ -22,4 +22,11 @@ urlpatterns = [
          name='password_reset_confirm'),
     path('password-reset/complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('register/', views.register, name='register'),
+    path('doctor_register/', views.register_doctor, name='doctor_register'),
+    path(r'edit/', views.edit, name='edit'),
+    path(r'function_menu_patient/', views.function_menu_patient, name='function_menu_patient'),
+    path(r'paitient_main_menu/', views.paitient_main_menu, name='paitient_main_menu'),
+    # path('user/edit/', ProfileUpdateView.as_view(), name='profile_edit'),
+    # path('user/<str:slug>/', ProfileDetailView.as_view(), name='profile_detail'),
+
 ]
