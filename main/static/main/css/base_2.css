@@ -20,7 +20,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;  font-family: 'Rubik', 
     margin: 0;
     border: 0;
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: rgb(0, 255, 200);
+  /*-webkit-box-shadow: 0 0 0px 1000px #000 inset;*/
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 *{
 /*    font-family: 'IBM Plex Sans', sans-serif;*/
@@ -521,7 +528,7 @@ header{
     font-weight: 500;
 }
 .real_problem_blure {
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 400;
     text-align: center;
 
@@ -539,9 +546,10 @@ header{
     margin: 100px 40px;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /*align-items: center;*/
+  /*justify-content: center;*/
   width: 320px;
+    height: 320px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 32px;
   overflow: hidden;
@@ -557,14 +565,17 @@ header{
   color: black;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
-
+.card_menu_content a{
+    color: white;
+}
 .card_menu_content .heading {
   font-weight: 700;
-  font-size: 32px;
+    font-size: 22px;
 }
 
 .card_menu_content .para {
   line-height: 1.5;
+    flex: 1 1 auto;
 }
 
 .card_menu_content .btn {
@@ -600,8 +611,12 @@ header{
 }
 
 .card_item:hover .btn {
-  color: #212121;
+
   background: #e8e8e8;
+}
+
+.card_item:hover .btn a{
+  color: #212121;
 }
 
 .card_menu_content .btn:hover {
@@ -622,13 +637,14 @@ header{
 
 .circle_info_row {
     display: flex;
-    align-items: center;
+
 
 
 }
 .circle_item {
-    margin: 0px 50px;
-    flex: 1 1 33.333%;
+
+    flex: 0 1 40%;
+    margin-right: 50px;
 
 }
 .circle_item_column {
@@ -638,22 +654,23 @@ header{
     align-items: center;
 }
 .circle_item_img {
-    border-radius: 50%;
-    background-color: #FFF;
-    flex: 0 1 auto;
+    flex: 0 0 auto;
 }
-.circle_item_img img{}
+.circle_item_img img{
+    max-width: 100%;
+}
 .circle_item_title {
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
     color: #202123;
-    font-size: 24px;
+    font-size: 23px;
 }
 .circle_item_text {
     text-align: center;
       color: #202123;
     font-size: 16px;
+    padding: 0px 20px;
 }
 
 .real_problem.gray {
@@ -708,9 +725,9 @@ header{
     align-items: center;
 }
 .investor_title {
+    text-align: center;
     font-size: 30px;
-    font-weight: 700px;
-    padding: 30px 0px;
+    padding: 30px 20px;
 }
 .investor_form {
     padding-bottom: 60px;
@@ -941,8 +958,11 @@ footer{
 
 }
 .footer_up_item {
-    flex: 0 1 30%;
+    display: flex;
+    flex: 0 1 50%;
     margin: 30px;
+    align-items: center;
+    justify-content: center;
 }
 .footer_up_item_column {
     display: flex;
@@ -1077,6 +1097,7 @@ footer{
 }
 
 .popup_input-field {
+
     text-align: center;
     font-size: 20px;
   background: none;
@@ -1131,12 +1152,29 @@ footer{
 .popup_card:hover {
   box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
 }
+
+.popup_card_head{
+  font-size: 23px;
+    font-weight: bold;
+    line-height: 2;
+    word-spacing: 4px;
+    letter-spacing: 0.5px;
+    color:grey;
+}
+.main_color{
+    color:  #33b9bc ;
+}
+
+
 .popup_confirm{
     color: gray;
     max-width: 424px;
     margin-top: 10px;
 }
-
+.popup_confirm a{
+    color: grey;
+    text-decoration:underline;
+}
 /*.popup_form small{
     margin-left: 20px;
     margin-bottom: 5px;
@@ -1145,7 +1183,10 @@ footer{
 
 */
 
-
+.team a{
+    text-decoration: none;
+    color: white;
+}
 
 
 
@@ -1207,7 +1248,7 @@ footer{
         font-size: 25px;
     }
     .real_problem_blure {
-        ont-size: 15px;
+        font-size: 15px;
     }
 
     .card_menu_content .heading {
@@ -1281,15 +1322,20 @@ footer{
 
     .circle_item {
     margin: 35px ;
+
     }
     
     #input-field {
-    width: auto;
+    width: 160px;
 }
 
     .investor_button {
     
-    padding: 0.5em 1em;}
+    padding: 0.5em 0.5em;}
+    .investor_button span {
+    letter-spacing: 0.5px;
+
+}
 
     .contact_row {
     flex-direction: column;}

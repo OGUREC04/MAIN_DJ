@@ -1,0 +1,196 @@
+/*Обнуление*/server
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}SublimeServer: Start SublimeServer
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit; font-family: 'Ysabeau SC', sans-serif;}
+/*--------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*{
+/*    font-family: 'IBM Plex Sans', sans-serif;*/
+    font-family: 'IBM Plex Serif', serif;
+/*    font-family: 'Inter', sans-serif;*/
+/*    font-family: 'Playfair Display', serif;*/
+/*    font-family: 'Rubik', sans-serif;*/
+/*    font-family: 'STIX Two Text', serif;*/
+/*    font-family: 'Vollkorn', serif;*/
+/*    font-family: 'Yeseva One', cursive;*/
+/*    font-family: 'Ysabeau SC', sans-serif;*/
+    }
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+    background-image: url(../img/Ellipse_3.svg), url(../img/Ellipse_5.svg), url(../img/Ellipse_6.svg);
+    background-position: left, right, top, bottom;
+  width: 100%;
+ 
+}
+.header_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    flex: 0 1 140px;
+}
+.logo img{
+    max-width: 100%;
+}
+
+.title{
+    padding-right: 40px;
+    margin-right: 40px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 750;
+    color: black;
+}
+
+.navigation_head {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    margin-left: 15%;
+}
+
+
+
+.navigation_head li{
+    font-size: 60px;
+    padding: 15px 0px;
+}
+
+.navigation_head li a{
+   color: black;
+   text-decoration: none;
+
+}
+
+.navigation_head li a:hover{
+    color:  #2AA5A0;
+   
+}
+
+.navigation_head_column {}
+.navigation_head_list {}
+
+.topic_name{
+    font-size: 55px;
+}
+
+.example{
+    font-size: 40px;
+}
+
+.topic_text{
+    font-size: 30px;
+    color: #516166;
+}
+
+
+.patient {
+    height: 100vh;
+}
+
+.patient_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+
+
+}
+.patient_content_row {
+    display: flex;
+
+}
+.text_content {
+    padding: 0px 11%;
+    flex: 0 1 50%;
+}
+.text_content_column {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+}
+
+
+.text_content_column h2{
+    padding-bottom: 50px;
+    }
+
+
+
+
+.img_content {
+    flex: 0 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_img{
+    flex: 0 1 450px;
+}
+
+
+.img_content img{
+    max-width: 100%;
+}
+
+
+
+.medicine {
+    height: 100vh;
+}
+.doctor {
+    height: 100vh;
+}
+
+
+@media (max-width: 767px){
+    .navigation_head li{
+        font-size: 35px;
+        padding: 10px 0px;
+}
+
+    .topic_name{
+    font-size: 30px;
+}
+
+    .example{
+        font-size: 20px;
+    }
+
+    .topic_text{
+        font-size: 20px;
+        color: #516166;
+    }
+    .patient_content_row {
+    flex-direction: column;
+}
+    .img_img {
+    flex: 0 1 390px;
+}
+}

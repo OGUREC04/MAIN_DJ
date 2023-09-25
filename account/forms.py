@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile, SendHelp
 
 from django.contrib.auth.models import AbstractUser
 
@@ -68,7 +68,7 @@ class ProfileEditForm(forms.ModelForm):
         fields = ('date_of_birth', 'photo')
 
 
-class PatientMenuForm(forms.Form):
+class PatientMenuForm(forms.ModelForm):
     CHOICES = [
         ('1', ''),
         ('2', ''),
@@ -78,8 +78,11 @@ class PatientMenuForm(forms.Form):
         choices=CHOICES,
     )
     problem = forms.CharField(widget=forms.Textarea(attrs={"id": "comment_text", "placeholder": "256 символов", "class": "ui-autocomplete-input", "cols": "40" }))
-    languages = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={"id": "multi-select", "name": "states", "class": "ui selection dropdown"}), choices=((1, "Болит голова"), (2, "Болит горло"), (3, "Что то еще болит")))
+    type_danger = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={"id": "multi-select", "name": "states", "class": "ui selection dropdown"}), choices=(("Болит голова", "Болит голова"), ("Болит горло", "Болит горло"), ("Температура", "Температура")))
     full_name = forms.CharField(widget=forms.TextInput(attrs={"id": "fullname", "class": "input", "placeholder":"Введите ФИО в свободной форме"}))
     address = forms.CharField(widget=forms.TextInput(attrs={"id": "address", "class": "input", "placeholder": "Введите адрес в свободной форме"}))
     number = forms.IntegerField(widget=forms.NumberInput(attrs={"class": "input", "type": "tel",  "placeholder": "Номер (8 999 999 99 99)"}))
 
+    class Meta:
+        model = SendHelp
+        fields = ('age', 'problem', 'type_danger', 'full_name', 'address', 'number')

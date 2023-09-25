@@ -51,16 +51,16 @@
 									</div>
 									<div class="icon">
 										<div class="icon_row">
-											<a href="#" class="social-link1"> <img  src="{% static 'main/img/940987_vk_icon.png' %}" alt="">  </a>
-											<a href="#" class="social-link1">  <img  src="{% static 'main/img/3787425_telegram_logo_messanger_social_social media_icon.png' %}" alt="" class="bi bi-tg" >   </a>
-											<a href="#" class="social-link1">  <img  src="{% static 'main/img/6636566_instagram_social media_social network_icon.png' %}" alt="" class="bi bi-instagram">  </a>
+											<a href="https://vk.com/ogurec15" class="social-link1"> <img  src="{% static 'main/img/940987_vk_icon.png' %}" alt="">  </a>
+											<a href="https://t.me/Empt_t1" class="social-link1">  <img  src="{% static 'main/img/3787425_telegram_logo_messanger_social_social media_icon.png' %}" alt="" class="bi bi-tg" >   </a>
+											<a href="mailto:teamlifeline74@gmail.com" class="social-link1">  <img  src="{% static 'main/img/email (1).png' %}" alt="" class="bi bi-instagram">  </a>
 											<a href="#"> </a>
 										</div>
 									</div>
 
 									<button data-text="Awesome" class="button">
-									    <span class="actual-text">&nbsp;Strat&nbsp;</span>
-									    <span class="hover-text" aria-hidden="true">&nbsp;Strat&nbsp;</span>
+									    <span class="actual-text">&nbsp;Начать&nbsp;</span>
+									    <span class="hover-text" aria-hidden="true">&nbsp;Начать&nbsp;</span>
 									</button>
 								</div>
 							</div>
@@ -81,27 +81,41 @@
 							</div>
 						</div>
 
+
                         <div class="popup">
 							<div class="closeModal"></div>
 							<div class="popup_card">
 								  <div class="popup_card2">
 								    <form method="post" class="popup_form" action=".">
+                                        <h3 class="popup_card_head">Заказать демо приложения <span class="main_color">Life-Line</span></h3>
                                         <div class="popup_field">
                                             <label>
-                                                <input  required="" type="tel" class="popup_input-field phone"  placeholder="number" autocomplete="off" name="number"
-                                                pattern="[7-8]{1}[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}">
+                                                <input  required="" type="text" class="popup_input-field name"  placeholder="Ваше имя" autocomplete="off" name="number_name">
+                                            </label>
+                                        </div>
+                                        <div class="popup_field">
+                                            <label>
+                                                <input  required="" type="text" class="popup_input-field company"  placeholder="Компания или должность" autocomplete="off" name="company">
+                                            </label>
+                                        </div>
+                                        <div class="popup_field">
+                                            <label>
+                                                <input  required="" type="email" class="popup_input-field email"  placeholder="Почта" autocomplete="off" name="email">
                                             </label>
                                         </div>
 
                                         <div class="popup_field">
                                             <label>
-                                                <input  required="" type="text" class="popup_input-field name"  placeholder="name" autocomplete="off" name="number_name">
+                                                <input  required="" type="tel" class="popup_input-field phone"  placeholder="Номер( 8 999 999 99 99)" autocomplete="off" name="number"
+                                                pattern="[7-8]{1}[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}">
                                             </label>
                                         </div>
+
+
                                         {% csrf_token %}
-                                        <button class="popup_button3"  type="submit" name="submit" >Send Demo</button>
+                                        <button class="popup_button3"  type="submit" name="submit" >Отправить демо версию приложения</button>
                                             <p class="popup_confirm">
-									Нажимая кнопку "Запросить Демо", вы подтверждаете согласие с соглашением об использовании программы и даете согласие на обработку персональных данных.
+                                                Нажимая кнопку "Запросить Демо", вы подтверждаете согласие с <a href="https://drive.google.com/drive/folders/1KvOraHTz82Ryej2iqXav1SW9fMWwpOM1?usp=drive_link">соглашением об использовании программы и даете согласие на обработку персональных данных.</a>
 								</p>
 								    </form>
 								  </div>
@@ -157,37 +171,31 @@
 							<div class="card_menu_row">
 								<div class="card_item">
 								  <div class="card_menu_content">
-									    <p class="heading">Card Hover Effect
+									    <p class="heading">Для пациента
 									    </p><p class="para">
-									      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-									      laboriosam at voluptas minus culpa deserunt delectus sapiente
-									      inventore pariatur
+									     Своевременное оказание качественной медицинской помощи.
 									    </p>
-									    <button class="btn">Read more</button>
+									    <button class="btn"><a href="{% url "main:faq" %}">Читать подробнее</a></button>
 									</div>
 								</div>
 
 
 								<div class="card_item">
 								  <div class="card_menu_content">
-									    <p class="heading">Card Hover Effect
+									    <p class="heading">Для здравоохранения
 									    </p><p class="para">
-									      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-									      laboriosam at voluptas minus culpa deserunt delectus sapiente
-									      inventore pariatur
+									     Оптимизация работы службы скорой медицинской помощи.
 									    </p>
-									    <button class="btn">Read more</button>
+									    <button class="btn"><a href="{% url "main:faq" %}">Читать подробнее</a></button>
 								    </div>
 								</div>
 								<div class="card_item">
 								  <div class="card_menu_content">
-									    <p class="heading">Card Hover Effect
+									    <p class="heading">Для врача
 									    </p><p class="para">
-									      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-									      laboriosam at voluptas minus culpa deserunt delectus sapiente
-									      inventore pariatur
+									     Свободный график, дополнительный доход.
 									    </p>
-									    <button class="btn">Read more</button>
+									    <button class="btn"><a href="{% url "main:faq" %}">Читать подробнее</a></button>
 								    </div>
 								</div>
 							</div>
@@ -200,8 +208,8 @@
 						<div class="container">
 							<div class="real_problem_text">
 								<div class="real_problem_column">
-									<p class="real_problem_title title_size">Технологии Life-Line </p>
-									<p class="real_problem_blure blure_size">Простые, быстрые и наиболее выгодные решения, благодаря применению современных технологий</p>
+									<p class="real_problem_title title_size">Проект Life-Line </p>
+									<p class="real_problem_blure blure_size">Простые, быстрые и наиболее выгодные решения.</p>
 								</div>
 							</div>
 						</div>
@@ -211,13 +219,13 @@
 									<div class="circle_item">
 										<div class="circle_item_column">
 											<div class="circle_item_img">
-                                                 <img  src="{% static 'main/img/ii.svg' %}" alt="">
+                                                 <img  src="{% static 'main/img/hands.png' %}" alt="">
 											</div>
-											<p class="circle_item_title">
-												Big Data
+												<p class="circle_item_title">
+												Система взаимодействия
 											</p>
 											<p class="circle_item_text">
-												Большие данные внутри помогают находить все, что нужно для оценки рисков.
+												Наше решение в стиле Uber поможет привлечь врачей к сотрудничеству, а пациентов заинтересует скоростью предоставления услуг, при этом не требуя больших расходов.
 											</p>
 
 										</div>
@@ -225,13 +233,14 @@
 									<div class="circle_item">
 										<div class="circle_item_column">
 											<div class="circle_item_img">
-                                                 <img  src="{% static 'main/img/ii.svg' %}" alt="">
+                                                 <img  src="{% static 'main/img/mobile.png' %}" alt="">
 											</div>
 											<p class="circle_item_title">
-												Big Data
+												Удобное приложение
 											</p>
 											<p class="circle_item_text">
-												Большие данные внутри помогают находить все, что нужно для оценки рисков.
+												В личном кабинете хранится медицинская карта пациента, где он в любое время может посмотреть результаты приема и назначения врача.
+Связаться с доктором можно через сообщения или аудио/видеозвонок, а если есть необходимость вызвать врача на дом, то благодаря картам Openstreet maps, приложение выстроит кратчайшие маршруты до необходимой точки.
 											</p>
 
 										</div>
@@ -239,13 +248,14 @@
 									<div class="circle_item">
 										<div class="circle_item_column">
 											<div class="circle_item_img">
-												 <img  src="{% static 'main/img/ii.svg' %}" alt="">
+												 <img  src="{% static 'main/img/goal.png' %}" alt="">
 											</div>
-											<p class="circle_item_title">
-												Big Data
+
+                                            <p class="circle_item_title">
+												Перспективы
 											</p>
 											<p class="circle_item_text">
-												Большие данные внутри помогают находить все, что нужно для оценки рисков.
+												Молодая и амбициозная команда готовая работать на благо проекта: мы следим за новостями, последними трендами, учитываем опыт Российских и иностранных коллег, а так же взаимодействуем с экспертами из разных сфер для того чтобы улучшать и продвигать нашу идею.
 											</p>
 
 										</div>
@@ -262,13 +272,13 @@
 							<div class="investor_area" id="investor">
 								<div class="investor_area_column">
 									<p class="investor_title title_size">
-										Investor? join our rocket!
+										Инвестор? Оставляйте почту и присоединяйтесь к нам! Мы вышлем презентацию  с подробностями.
 									</p>
 									<form class="investor_form"  method="post">
 										<div class="investor_form_row">
 											<input required="" placeholder="Email Address" type="email" id="input-field" name="em">
                                              {% csrf_token %}
-											<button class="investor_button"><span>Send pitch deck
+											<button class="investor_button"><span>Отправить презентацию
 											</span></button>
 										</div>
 									</form>
@@ -308,7 +318,7 @@
 															Наша дружная команда готова помочь.
 														</p>
 														<a href="#" class="contact_cards_item_email">
-															ll@gmail.com
+															teamlifeline74@gmail.com
 														</a>
 													</div>
 												</div>
@@ -322,7 +332,7 @@
 														<div class="bg"></div>
 														<div class="blob"></div>
 														<div class="contact_cards_item_img">
-                                                             <img  src="{% static 'main/img/2674096_object_email_web_essential_icon.png' %}" alt="">
+                                                             <img  src="{% static 'main/img/9025961_telegram_logo_icon.png' %}" alt="">
 														</div>
 														<p class="contact_cards_item_title">
 															Telegram
@@ -330,9 +340,10 @@
 														<p class="contact_cards_item_about">
 															Наша дружная команда готова помочь.
 														</p>
-														<a href="#" class="contact_cards_item_email">
-															tg
+														<a href="https://t.me/Empt_t1" class="contact_cards_item_email">
+															Телеграм
 														</a>
+
 													</div>
 												</div>
 											</div>
@@ -345,16 +356,16 @@
 														<div class="bg"></div>
 														<div class="blob"></div>
 														<div class="contact_cards_item_img">
-                                                             <img  src="{% static 'main/img/2674096_object_email_web_essential_icon.png' %}" alt="">
+                                                             <img  src="{% static 'main/img/9034990_logo_vk_icon.png' %}" alt="">
 														</div>
 														<p class="contact_cards_item_title">
-															ВК
+															Вконтакте
 														</p>
 														<p class="contact_cards_item_about">
 															Наша дружная команда готова помочь.
 														</p>
-														<a href="#" class="contact_cards_item_email">
-															ll@gmail.com
+														<a href="https://vk.com/ogurec15" class="contact_cards_item_email">
+															Вконтакте
 														</a>
 													</div>
 												</div>
@@ -374,30 +385,65 @@
 						<div class="container ac">
 							<div class="accord_accord">
 								<div class="accord_column">
-									<p class="accord_title title_size"> Frequently Asked Questions </p>
+									<p class="accord_title title_size"> Часто задаваемые вопросы </p>
 									<div class="ui accordion">
 									  <div class="title">
 									    <i class="dropdown icon"></i>
-									    What is a dog?
+									   Можно ли быть уверенным в
+                                        компетенции медицинского
+                                        работника?
 									  </div>
 									  <div class="content">
-									    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+									    <p class="transition hidden">Да, для регистрации в приложении медицинский
+                                            работник прикрепляет те же документы, что
+                                            требуются для трудоустройства в любое
+                                            медицинское учреждение (документы
+                                            удостоверяющие личность, документы об
+                                            образовании, сертификаты, медицинскую книжку,
+                                            справку об отсутствии судимости).</p>
 									  </div>
+
+
 									  <div class="title">
 									    <i class="dropdown icon"></i>
-									    What kinds of dogs are there?
+									    Как защищены пользователи приложения с юридической точки зрения.
 									  </div>
 									  <div class="content">
-									    <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+									    <p>Права граждан в данном вопросе
+                                            регулируются теми же документами, что и
+                                            при любой медицинской деятельности, в
+                                            том числе ФЗ «об основах охраны
+                                            здоровья граждан в РФ»..</p>
 									  </div>
+
+
 									  <div class="title">
 									    <i class="dropdown icon"></i>
-									    How do you acquire a dog?
+									   Будет ли где-то храниться
+                                        информация о прошедшем
+                                        посещении врача?
 									  </div>
 									  <div class="content">
-									    <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
-									    <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+									    <p>Пациенты при регистрации в приложении
+                                        указывают номер своего полиса ОМС (или
+                                        номер полиса ребенка), все вызовы и
+                                        заметки врача будут отображаться в
+                                        медицинской информационной системе
+                                        Барс.</p>
 									  </div>
+
+                                     <div class="title">
+									    <i class="dropdown icon"></i>
+									   Какое оборудование будут
+                                        иметь при себе врачи?
+									  </div>
+									  <div class="content">
+
+									    <p>В обязательном порядке врач будет иметь при
+                                        себе маску, перчатки, тонометр, стетоскоп и
+                                        медицинский шпатель.</p>
+									  </div>
+
 								  </div>
 								</div>
 							</div>
@@ -414,14 +460,13 @@
 								<div class="footer_up_item">
 									<div class="footer_up_item_column">
 										<p class="footer_up_title">
-											SEE OTHER BOOKS
+											Команда Life-Line
 										</p>
 										<div class="footer_up_list">
 											<ul>
-												<li>Bestsellers</li>
-												<li>All books</li>
-												<li>Our authors</li>
-												<li>Our authors</li>
+                                                <li class="team"> <a href="{% url "main:team" %}">Команда</a></li>
+
+
 											</ul>
 										</div>
 
@@ -430,35 +475,33 @@
 								<div class="footer_up_item">
 									<div class="footer_up_item_column">
 										<p class="footer_up_title">
-											SEE OTHER BOOKS
+											Документы Life-Line
 										</p>
 										<div class="footer_up_list">
 											<ul>
-												<li>Bestsellers</li>
-												<li>All books</li>
-												<li>Our authors</li>
-												<li>Our authors</li>
+												<li class="team">  <a href="https://drive.google.com/drive/folders/1KvOraHTz82Ryej2iqXav1SW9fMWwpOM1?usp=drive_link">Документы</a></li>
+
 											</ul>
 										</div>
 
 									</div>
 								</div>
-								<div class="footer_up_item">
-									<div class="footer_up_item_column">
-										<p class="footer_up_title">
-											SEE OTHER BOOKS
-										</p>
-										<div class="footer_up_list">
-											<ul>
-												<li>Bestsellers</li>
-												<li>All books</li>
-												<li>Our authors</li>
-												<li>Our authors</li>
-											</ul>
-										</div>
-
-									</div>
-								</div>
+{#								<div class="footer_up_item">#}
+{#									<div class="footer_up_item_column">#}
+{#										<p class="footer_up_title">#}
+{#											SEE OTHER BOOKS#}
+{#										</p>#}
+{#										<div class="footer_up_list">#}
+{#											<ul>#}
+{#												<li>Bestsellers</li>#}
+{#												<li>All books</li>#}
+{#												<li>Our authors</li>#}
+{#												<li>Our authors</li>#}
+{#											</ul>#}
+{#										</div>#}
+{##}
+{#									</div>#}
+{#								</div>#}
 							</div>
 
 						</div>

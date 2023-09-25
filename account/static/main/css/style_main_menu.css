@@ -575,6 +575,16 @@ textarea:focus {
 .radio_men label{
     font-size: 0px;
 }
+
+.doctor_info{
+    display: flex;
+    flex-direction: column;
+}
+.doc_beuty{
+    margin-top: 40px;
+}
+
+
 @media (max-width: 767px){
     .interface_container {
        min-width: 400px;

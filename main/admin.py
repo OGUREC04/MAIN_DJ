@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models her
 from articles.models import Article, Comment
 from main.models import NumberDemo
-from account.models import Profile
+from account.models import Profile, SendHelp
 
 
 class ProfileAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ class ProfileAdmin(admin.ModelAdmin):
 
 admin.site.register(NumberDemo)
 admin.site.register(Profile, ProfileAdmin)
+admin.site.register(SendHelp)

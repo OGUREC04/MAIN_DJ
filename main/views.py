@@ -14,6 +14,7 @@ def main_page(request):
 
         form = UserForm(request.POST)
         if form.is_valid():
+            print(form)
             new_number = form.save(commit=False)
             new_number.save()
             # number_name = form.cleaned_data.get("number_name")
@@ -52,7 +53,8 @@ def paitient_main_menu(request):
     return render(request, 'main/paitient_main_menu.html')
 
 
+def team(request):
+    return render(request, 'main/team.html')
 
-
-
-
+def faq(request):
+    return render(request, 'main/faq.html')

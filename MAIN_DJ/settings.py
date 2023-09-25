@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-3nt9o!wkbcsn97*l)9e8pgkpdb7gltd^+l0_3mam9jp9xfl@!t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','c2bc-77-222-117-30.ngrok-free.app']
-CSRF_TRUSTED_ORIGINS = ['https://8942-77-222-117-30.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','9144-77-222-117-30.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://9144-77-222-117-30.ngrok-free.app']
 
 # Application definition
 
@@ -135,7 +135,7 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
+LOGIN_REDIRECT_URL = reverse_lazy('account:function_menu_patient')
 LOGIN_URL = reverse_lazy('account:login')
 LOGOUT_URL = reverse_lazy('account:logout')
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

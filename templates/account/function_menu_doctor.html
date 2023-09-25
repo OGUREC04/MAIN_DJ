@@ -13,13 +13,13 @@
         <link rel="stylesheet" href="{% static 'main/css/style_main_menu.css'%}">
          <link rel="stylesheet" href="{% static 'main/css/function_menu.css'%}">
 
-		<!-- Кодировка страницы --> 
+		<!-- Кодировка страницы -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 	</head>
 
-			<!-- Отображаемое тело страницы -->	
-	<body>	
+			<!-- Отображаемое тело страницы -->
+	<body>
 
 
 		<div class="wrapper">
@@ -34,18 +34,18 @@
 								        </div>
 								    </div>
 								    <div class="text_name">
-									<p class="user_user">пользователь</p>
+									<p class="user_user">Врач</p>
 									<p class="name">{{ user_form.username.value}}</p>
 									</div>
 
 								</div>
 
 								<div class="line">
-									
+
 								</div>
 						<ul class="menu_func">
 							<li class="item1"><a class="bn" href="{% url "account:edit" %}">Профиль </a></li>
-						    <li class="item2"><a  class="bn" href="{% url "account:paitient_main_menu" %}">Вызов врача</a></li>
+						    <li class="item2"><a  class="bn" href="{% url "account:doctor_main_menu" %}">Принять вызов</a></li>
 						    <li class="item3"><a  class="bn" href="#">Сообщения</a></li>
 						    <li class="item4"><a  class="bn" href="#">История</a></li>
 						</ul>
@@ -54,20 +54,7 @@
 			</div>
 		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<!-- блок -->	
+			<!-- блок -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="{% static 'main/js/avatar.js'%}"></script>
         <script src="{% static 'main/js/vendors.js'%}"></script>

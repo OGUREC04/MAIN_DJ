@@ -90,7 +90,7 @@
                                                     Please try again.
                                                 </p>
                                             {% else %}
-                                                <p class="login_advice">Please, use the following form to log-in. If you don't have an account <a href="{% url "account:register" %}">register here</a></p>
+
                                             {% endif %}
 											<form class="form"  action="{% url 'account:login' %}" method="post">
                                               {% csrf_token %}
@@ -104,7 +104,7 @@
                                                  {% endfor %}
 
 											    <button class="submit">Submit</button>
-											     <p class="signin">Еще не зарегестрирован? <a href="#">Регистрация</a> </p>
+											     <p class="signin">Еще не зарегестрирован? <a  href="{% url "account:register" %}">Регистрация</a> </p>
 											</form>
 										</div>
 									</div>
